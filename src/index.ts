@@ -14,13 +14,14 @@ app.get('/api', (req, res) => {
 
   const currentDay = new Date().toLocaleDateString('en-US', { weekday: 'long' });
   const utcTime = new Date().toISOString();
+  const utcTimeWithoutMilliseconds = utcTime.slice(0, -5) + "Z";
   const githubRepoUrl = 'https://github.com/ahmad-cod/hngx-backend-task1';
   const githubFileUrl = `${githubRepoUrl}/blob/main/src/index.ts`;
 
   const response = {
     slack_name: slack_name as string,
     current_day: currentDay,
-    utc_time: utcTime,
+    utc_time: utcTimeWithoutMilliseconds,
     track: track as string,
     github_file_url: githubFileUrl,
     github_repo_url: githubRepoUrl,
