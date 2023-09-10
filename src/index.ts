@@ -14,8 +14,8 @@ app.get('/api', (req, res) => {
 
   const currentDay = new Date().toLocaleDateString('en-US', { weekday: 'long' });
   const utcTime = new Date().toISOString();
-  const githubRepoUrl = 'https://github.com/username/repo';
-  const githubFileUrl = `${githubRepoUrl}/blob/main/file_name.ext`;
+  const githubRepoUrl = 'https://github.com/ahmad-cod/hngx-backend-task1';
+  const githubFileUrl = `${githubRepoUrl}/blob/main/src/index.ts`;
 
   const response = {
     slack_name: slack_name as string,
